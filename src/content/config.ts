@@ -4,6 +4,7 @@ const mentira = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
+		pubDate: z.coerce.date().optional(),
 		lieDateDigo: z.coerce.date().optional(),
 		lieDate: z.coerce.date().optional(),
 		updatedDate: z.coerce.date().optional(),
