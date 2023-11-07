@@ -4,7 +4,11 @@ import Header from '@components/Header.astro';
 import Footer from '@components/Footer.astro';
 import Iframe from '@components/Iframe.astro';
 import VideoBlocks from '@components/VideoBlocks.astro';
+import FormattedDate from '@components/FormattedDate.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { getCollection } from 'astro:content';
+
+const mentira = (await getCollection('mentira')).find(el => el.data.featured) as any;
 ---
 
 <!doctype html>
@@ -16,22 +20,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     <Header title={SITE_TITLE} />
     <main>
       <h1>Mentirosos</h1>
-      <VideoBlocks>
-        <div slot="before">
-          <h2>El <abbr title="Partido Socilaista Navarro">PSN</abbr> no pactará con Bildu</h2>
-          <Iframe
-            src="https://www.youtube.com/embed/_ffEffzkGtc?si=OrJc5USM7Lybggjr"
-            title="El PSN no pactará con Bildu"
-          />
-        </div>
-        <div slot="after">
-          <h2>BILDU garantiza su SÍ a Pedro Sánchez</h2>
-          <Iframe
-            src="https://www.youtube.com/embed/jM9IivS7-0s?si=Xn7hCCgs8UEGgau4"
-            title="BILDU garantiza su SÍ a Pedro Sánchez"
-          />
-        </div>
-      </VideoBlocks>
+      <a href={`/mentira/${mentira.slug}/`}>
+        <h2>{mentira.data.title}</h2>
+        <p>
+          <FormattedDate date={mentira.data.lieDate} />
+        </p>
+      </a>
     </main>
     <Footer />
   </body>

@@ -6,7 +6,7 @@ import FormattedDate from '@components/FormattedDate.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 
-const posts = (await getCollection('mentira')).sort(
+const mentiras = (await getCollection('mentira')).sort(
   (a, b) => b.data.lieDate.valueOf() - a.data.lieDate.valueOf()
 );
 ---
@@ -22,12 +22,12 @@ const posts = (await getCollection('mentira')).sort(
       <section>
         <ul>
           {
-            posts.map((post) => (
+            mentiras.map((mentira) => (
               <li>
-                <a href={`/mentira/${post.slug}/`}>
-                  <h2>{post.data.title}</h2>
+                <a href={`/mentira/${mentira.slug}/`}>
+                  <h2>{mentira.data.title}</h2>
                   <p>
-                    <FormattedDate date={post.data.lieDate} />
+                    <FormattedDate date={mentira.data.lieDate} />
                   </p>
                 </a>
               </li>

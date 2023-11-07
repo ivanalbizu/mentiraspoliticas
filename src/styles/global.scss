@@ -87,6 +87,12 @@
     margin: auto;
     padding: 3em 0;
   }
+  .content-centered {
+    width: 100%;
+    max-width: 840px;
+    margin-left: auto;
+    margin-right: auto;
+  }
   h1,
   .h1,
   h2,
@@ -127,6 +133,11 @@
   .h6,
   h6 {
     font-size: var(--font-size-h6);
+  }
+  p {
+    &:not(:last-of-type) {
+      margin-bottom: var(--spacing-sm);
+    }
   }
   iframe,
   video {
