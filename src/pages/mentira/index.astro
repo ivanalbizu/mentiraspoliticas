@@ -25,14 +25,6 @@ const posts = (await getCollection('mentira')).sort(
             posts.map((post) => (
               <li>
                 <a href={`/mentira/${post.slug}/`}>
-                  {post.data.heroImage && (
-                    <img
-                      width={720}
-                      height={360}
-                      src={post.data.heroImage}
-                      alt=""
-                    />
-                  )}
                   <h2>{post.data.title}</h2>
                   <p>
                     <FormattedDate date={post.data.lieDate} />
