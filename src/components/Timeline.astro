@@ -213,6 +213,7 @@
     margin: 50px auto;
     padding: 40px 0;
     width: 1000px;
+    max-width: 100%;
     box-sizing: border-box;
   }
   .timeline:before {
@@ -287,7 +288,6 @@
   .timeline ul li:nth-child(odd) .time {
     position: absolute;
     top: 12px;
-    right: -165px;
     margin: 0;
     padding: 8px 16px;
     background: rgba(233, 33, 99, 1);
@@ -298,13 +298,22 @@
   .timeline ul li:nth-child(even) .time {
     position: absolute;
     top: 12px;
-    left: -165px;
     margin: 0;
     padding: 8px 16px;
     background: rgba(233, 33, 99, 1);
     color: #fff;
     border-radius: 18px;
     box-shadow: 0 0 0 3px rgba(233, 33, 99, 0.3);
+  }
+  @media (min-width: 768px) {
+    .timeline ul li:nth-child(even) .time {
+      left: 0;
+      transform: translateX(calc(-100% - 20px));
+    }
+    .timeline ul li:nth-child(odd) .time {
+      right: 0;
+      transform: translateX(calc(100% + 20px));
+    }
   }
   @media (max-width: 1000px) {
     .timeline {
