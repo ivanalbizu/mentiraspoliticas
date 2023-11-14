@@ -3,11 +3,14 @@ import BaseHead from '@components/BaseHead.astro';
 import Header from '@components/Header.astro';
 import Footer from '@components/Footer.astro';
 import Timeline from '@components/Timeline.astro';
+import TimelineItem from '@components/TimelineItem.astro';
 import FormattedDate from '@components/FormattedDate.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { getCollection } from 'astro:content';
 
-const mentira = (await getCollection('mentira')).find(el => el.data.featured) as any;
+const mentira = (await getCollection('mentira')).find(
+  (el) => el.data.featured
+) as any;
 ---
 
 <!doctype html>
@@ -19,7 +22,31 @@ const mentira = (await getCollection('mentira')).find(el => el.data.featured) as
     <Header title={SITE_TITLE} />
     <main>
       <h1>Mentirosos</h1>
-      <Timeline />
+      <Timeline>
+        <TimelineItem title="Título del item" date="Enero 2018">
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electroni
+          </p>
+        </TimelineItem>
+        <TimelineItem title="Segundo título del item" date="Febrero 2019">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint,
+            beatae quam? Itaque voluptate error eligendi, fugiat dolor quibusdam
+            quas nostrum.
+          </p>
+        </TimelineItem>
+        <TimelineItem title="Tercer título del item" date="Marzo 2020">
+          <p>
+            Dolor sit amet consectetur adipisicing elit. Sint,
+            beatae quam? Itaque voluptate error eligendi, fugiat dolor quibusdam
+            quas nostrum.
+          </p>
+        </TimelineItem>
+      </Timeline>
       <a href={`/mentira/${mentira.slug}/`}>
         <h2>{mentira.data.title}</h2>
         <p>
