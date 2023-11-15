@@ -11,30 +11,19 @@ import TimelineItem from '@components/TimelineItem.astro';
 <style is:inline>
   .timeline {
     position: relative;
-    margin: 50px auto 0;
-    padding: 40px 0 0;
-    width: 1000px;
-    max-width: 100%;
-    box-sizing: border-box;
   }
   .timeline::before {
     content: '';
     position: absolute;
     left: 50%;
     width: 2px;
-    height: calc(100% - 80px);
+    height: calc(100% - 40px);
     background: #c5c5c5;
   }
-  .timeline ul {
-    padding: 0;
-    margin: 0;
-  }
   .timeline ul li {
-    list-style: none;
     position: relative;
     width: 50%;
-    padding: 20px 40px;
-    box-sizing: border-box;
+    padding: 12px 40px;
   }
   .timeline ul li:nth-child(odd) {
     float: left;
@@ -72,25 +61,18 @@ import TimelineItem from '@components/TimelineItem.astro';
     box-shadow: 0 0 0 3px rgba(233, 33, 99, 0.2);
   }
   .timeline ul li h3 {
-    padding: 0;
-    margin: 0;
     color: rgba(233, 33, 99, 1);
     font-weight: 600;
   }
-  .timeline ul li p {
-    margin: 10px 0 0;
-    padding: 0;
-  }
   .timeline ul li .time h4 {
     margin: 0;
-    padding: 0;
     font-size: 14px;
   }
   .timeline ul li:nth-child(odd) .time {
     position: absolute;
     top: 12px;
     margin: 0;
-    padding: 8px 16px;
+    padding: 4px 16px;
     background: rgba(233, 33, 99, 1);
     color: #fff;
     border-radius: 18px;
@@ -124,6 +106,7 @@ import TimelineItem from '@components/TimelineItem.astro';
   @media (max-width: 767px) {
     .timeline {
       width: 100%;
+      padding-top: 34px;
       padding-bottom: 0;
     }
     h1 {
@@ -132,6 +115,7 @@ import TimelineItem from '@components/TimelineItem.astro';
     }
     .timeline::before {
       left: 20px;
+      height: calc(100% - 70px);
     }
     .timeline ul li:nth-child(odd),
     .timeline ul li:nth-child(even) {
