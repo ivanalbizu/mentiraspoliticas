@@ -1,6 +1,3 @@
----
-import TimelineItem from '@components/TimelineItem.astro';
----
 <div class="timeline">
   <ul>
     <slot></slot>
@@ -137,5 +134,8 @@ import TimelineItem from '@components/TimelineItem.astro';
       left: 50px;
       right: inherit;
     }
+  }
+  p {
+    text-wrap: pretty;
   }
 </style>
