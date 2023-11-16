@@ -1,0 +1,48 @@
+---
+title: 'Todo el mundo tiene derecho a manifestarse'
+description: 'Todo el mundo tiene derecho a manifestarse pero en este caso lo que está sucediendo es que hay un sector reaccionario que no acepta la soberanía popular, pero se van a tener que acostumbrar a ella'
+pubDate: 'Jul 23 2023'
+lieDateDigo: 'Nov 13 2023'
+lieDate: 'Nov 13 2023'
+author: 'Iñigo Errejón'
+featured: true
+draft: false
+tags:
+  - Sumar
+  - inigo-errejon
+---
+
+import VideoBlocks from '@components/VideoBlocks.astro';
+import Iframe from '@components/Iframe.astro';
+import Timeline from '@components/Timeline.astro';
+import TimelineItem from '@components/TimelineItem.astro';
+
+<VideoBlocks>
+	<div slot="before">
+		<h3>La soberanía popular reside aquí, no en ninguna sala</h3>
+		<Iframe
+			src="https://youtube.com/embed/Ewo9iizMNM8?si=MPANc1WQr8lPR7q9"
+			title="El PSN no pactará con Bildu"
+		/>
+	</div>
+	<div slot="after">
+		<h3>Todo el mundo tiene derecho a manifestarse</h3>
+		<Iframe
+			src="https://www.youtube.com/embed/Da98Hds_dVc?si=SN5e9E7Zqcsaiou1"
+			title="Hay un sector reaccionario que no acepta la soberanía popular"
+		/>
+    <p>Hay un sector reaccionario que no acepta la soberanía popular</p>
+	</div>
+</VideoBlocks>
+
+<Timeline>
+  <TimelineItem title="El ministro I" date="8 noviembre 2023">
+    <p>
+      Lorem Ipsum is simply dummy text of the printing and typesetting
+      industry. Lorem Ipsum has been the industry's standard dummy text
+      ever since the 1500s, when an unknown printer took a galley of type
+      and scrambled it to make a type specimen book. It has survived not
+      only five centuries, but also the leap into electroni
+    </p>
+  </TimelineItem>
+</Timeline>
