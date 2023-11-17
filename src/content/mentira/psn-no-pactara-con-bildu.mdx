@@ -14,6 +14,8 @@ tags:
 
 import VideoBlocks from '@components/VideoBlocks.astro';
 import Iframe from '@components/Iframe.astro';
+import Timeline from '@components/Timeline.astro';
+import TimelineItem from '@components/TimelineItem.astro';
 
 <VideoBlocks>
 	<div slot="before">
@@ -31,3 +33,19 @@ import Iframe from '@components/Iframe.astro';
 		/>
 	</div>
 </VideoBlocks>
+
+<Timeline>
+  <TimelineItem title="Pedro Sánchez" date="25 abril 2015">
+    <p>
+			El 25 de abril 2015 de Pedro Sánchez afirmaba con rotundidad: "con Bildu no vamos a pactar"», incluso llegaba a molestarse cuando el periodista Roberto Cámara, director de Navarra Televisión, le pedía mayor claridad respecto al partido de Arnaldo Otegi.
+    </p>
+  </TimelineItem>
+  <TimelineItem title="Pedro Sánchez" date="5 septiembre 2016">
+    <p>
+			El 5 de septiembre 2016 Pedro Sánchez dijo: "al único partido y eso sí se les anuncio que no vamos a hablar y no vamos a entablar ese diálogo es con el partido de Bildu
+    </p>
+  </TimelineItem>
+  <TimelineItem title="Pedro Sánchez" date="junio 2019">
+		<p>En junio de 2019 Padro Sánchez afirmaba: "en el PSN y el PSOE tenemos la misma posición y es que con bildu no se acuerda nada"</p>
+  </TimelineItem>
+</Timeline>
