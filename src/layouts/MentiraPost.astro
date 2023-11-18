@@ -22,7 +22,7 @@ const { title, description, lieDate, author, updatedDate } = Astro.props;
 				<div>
 					<div>
 						<div>
-							<FormattedDate date={lieDate} />
+							<!--<FormattedDate date={lieDate} />-->
 							{
 								updatedDate && (
 									<div>
@@ -30,7 +30,7 @@ const { title, description, lieDate, author, updatedDate } = Astro.props;
 									</div>
 								)
 							}
-							{ author && <span> | {author}</span> }
+							{ author && <span> {author}</span> }
 						</div>
 						<h2>{title}</h2>
 						<hr />
