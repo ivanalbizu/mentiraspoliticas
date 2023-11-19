@@ -34,11 +34,13 @@ const { title, description, author, updatedDate, tags } = Astro.props;
 							{ author && <span> {author}</span> }
 						</div>
 						<h2>{title}</h2>
+						<ul>
 						{tags.map(tag =>
 							<li>
 								<a href={`/tags/${slugifyStr(tag)}/`}>{tag}</a>
 							</li>
 						)}
+						</ul>
 						<hr />
 					</div>
 					<slot />
