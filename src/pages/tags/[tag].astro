@@ -1,0 +1,47 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import Default from "@layouts/Default.astro";
+
+import getUniqueTags from "@utils/getUniqueTags";
+import getPostsByTag from "@utils/getPostsByTag";
+import slugify from "@utils/slugify";
+import getSortedPosts from "@utils/getSortedPosts";
+
+export interface Props {
+  post: CollectionEntry<"mentira">;
+  tag: string;
+}
+
+export async function getStaticPaths() {
+  const posts = await getCollection("mentira");
+
+  const tags = getUniqueTags(posts);
+
+  return tags.map(tag => {
+    return {
+      params: { tag },
+      props: { tag },
+    };
+  });
+}
+
+const { tag } = Astro.props;
+
+const posts = await getCollection("mentira", ({ data }) => !data.draft);
+
+const tagPosts = getPostsByTag(posts, tag);
+
+const sortTagsPost = getSortedPosts(tagPosts);
+---
+
+<Default title={`Tag: ${tag}`}>
+  <ul>
+    {
+      sortTagsPost.map(({ data }) => (
+        <li>
+          <a href={`/mentira/${slugify(data)}`}>{data.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</Default>
