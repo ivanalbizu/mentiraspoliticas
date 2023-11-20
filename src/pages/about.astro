@@ -1,5 +1,7 @@
 ---
 import Default from '@layouts/Default.astro';
+
+import { YouTube } from '@astro-community/astro-embed-youtube';
 ---
 
 <Default
@@ -9,27 +11,11 @@ import Default from '@layouts/Default.astro';
     Sitio en el que se pretenden recoger mentiras de personajes políticos
     basados en bendita hemeroteca.
   </p>
-  <div class="player" data-video-id="_ffEffzkGtc"></div>
-  <div class="player" data-video-id="jM9IivS7-0s"></div>
+  <YouTube
+    id="_ffEffzkGtc"
+    poster="https://i.stack.imgur.com/rET57.jpg"
+  />
+  <YouTube
+    id="jM9IivS7-0s"
+  />
 </Default>
-
-<script :is-inline>
-  let tag = document.createElement('script');
-
-  tag.src = "https://www.youtube.com/iframe_api";
-  let firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-  function onYouTubeIframeAPIReady() {
-    const ytIframes = document.querySelectorAll('[data-video-id]');
-    ytIframes.forEach(ytIframe => {
-      player = new YT.Player(ytIframe, {
-        height: '360',
-        width: '640',
-        videoId: ytIframe.getAttribute('data-video-id'),
-        events: {}
-      });
-    })
-  }
-
-</script>
