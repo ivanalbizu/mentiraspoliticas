@@ -14,7 +14,7 @@ tags:
 ---
 
 import VideoBlocks from '@components/VideoBlocks.astro';
-import Iframe from '@components/Iframe.astro';
+import { YouTube } from '@astro-community/astro-embed-youtube';
 import Timeline from '@components/Timeline.astro';
 import TimelineItem from '@components/TimelineItem.astro';
 
@@ -24,10 +24,7 @@ import TimelineItem from '@components/TimelineItem.astro';
 		<h3>Patxi López dijo que Dolores Cospedal estaba pendiente de perpetrar un golpe de Estado</h3>
 	</div>
 	<div slot="after">
-		<Iframe
-			src="https://www.youtube.com/embed/rE1gLlKHsx4?si=MM487yZ0pyOxNWs6"
-			title="TODO"
-		/>
+    <YouTube id="rE1gLlKHsx4" title="TODO" />
 		<h3>TODO</h3>
 	</div>
 </VideoBlocks>

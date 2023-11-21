@@ -14,25 +14,19 @@ tags:
 ---
 
 import VideoBlocks from '@components/VideoBlocks.astro';
-import Iframe from '@components/Iframe.astro';
+import { YouTube } from '@astro-community/astro-embed-youtube';
 import Timeline from '@components/Timeline.astro';
 import TimelineItem from '@components/TimelineItem.astro';
 
 <VideoBlocks>
 	<div slot="before">
-		<Iframe
-			src="https://www.youtube.com/embed/-X-pF5R8m-U?si=pfkcKj0eP58wMIr2"
-			title="Pedro Sánchez no dará la aministía a los políticos ni a independentistas Catalanes"
-		/>
+    <YouTube id="-X-pF5R8m-U" />
     <h3>Pedro Sánchez no dará la aministía a los políticos ni a independentistas Catalanes</h3>
 		<p></p>
 	</div>
 	<div slot="after">
-		<Iframe
-			src="https://www.youtube.com/embed/NEHxSfmQuDM?si=4M4uza_QalP7s-xz"
-			title="Pedro Sánchez en la investidura de noviembre de 2023"
-		/>
-    <h3></h3>
+    <YouTube id="NEHxSfmQuDM" />
+    <h3>TODO</h3>
 		<p></p>
 	</div>
 </VideoBlocks>

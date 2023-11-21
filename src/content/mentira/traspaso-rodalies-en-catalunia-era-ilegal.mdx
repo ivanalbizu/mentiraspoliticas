@@ -14,23 +14,17 @@ tags:
 ---
 
 import VideoBlocks from '@components/VideoBlocks.astro';
-import Iframe from '@components/Iframe.astro';
+import { YouTube } from '@astro-community/astro-embed-youtube';
 
 <VideoBlocks>
 	<div slot="before">
 		<h3>El traspaso de los rodalíes era ilegal</h3>
-		<Iframe
-			src="https://www.youtube.com/embed/SxTHhummrgA?si=Wb3acFoRuHUOZBQU"
-			title="El traspaso de los rodalíes era ilegal"
-		/>
+		<YouTube id="SxTHhummrgA" title="El traspaso de los rodalíes era ilegal" />
 		<p><strong>Raquel Sánchez</strong> del <abbr title="Partido Socialista Obrero Español">PSOE</abbr> aseguró en el Congreso y en el Senado que el traspaso de los rodalíes era ilegal.</p>
 	</div>
 	<div slot="after">
+		<YouTube id="lbUIEEKHV9Q" title="El traspaso de los rodalíes era ilegal" />
 		<h3>¿Ahora si es posible ceder rodalíes?</h3>
-		<Iframe
-			src="https://www.youtube.com/embed/lbUIEEKHV9Q?si=L0ZHhb6T_OEo8Eoj"
-			title="¿Ahora si es posible ceder rodalíes?"
-		/>
     <p>Apenas 5 meses después, cuando faltan los apoyos, el Gobierno se los cede sin ningún tipo de problema.</p>
 	</div>
 </VideoBlocks>
