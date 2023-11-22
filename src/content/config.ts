@@ -13,6 +13,8 @@ const mentira = defineCollection({
 		featured: z.boolean().optional(),
 		draft: z.boolean().optional(),
 		tags: z.array(z.string()).default(["others"]),
+		youtubeId: z.string().optional(),
+		youtubeTitle: z.string().optional()
 	})
 });
 
