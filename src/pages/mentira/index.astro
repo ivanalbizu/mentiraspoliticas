@@ -3,6 +3,7 @@ import BaseHead from '@components/BaseHead.astro';
 import Header from '@components/Header.astro';
 import Footer from '@components/Footer.astro';
 import FormattedDate from '@components/FormattedDate.astro';
+import Tags from '@components/Tags.astro';
 import { YouTube } from '@astro-community/astro-embed-youtube';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
@@ -24,12 +25,13 @@ const mentiras = (await getCollection('mentira')).sort(
         <ul>
           {
             mentiras.map((mentira) => (
-              <li>
-                <span>
+              <li class="mentira">
+                <div class="entry">
                   <h2>{mentira.data.title}</h2>
                   <FormattedDate date={mentira.data.lieDate} />
+                  <Tags tags={mentira.data.tags} />
                   <a href={`/mentira/${mentira.slug}/`}>Ver la mentira <span class="sr-only">{mentira.data.title}</span></a>
-                </span>
+                </div>
                 <YouTube id={`${mentira.data.youtubeId}`} title={`${mentira.data.youtubeTitle}`} />
               </li>
             ))
@@ -42,10 +44,21 @@ const mentiras = (await getCollection('mentira')).sort(
 </html>
 
 <style lang="scss">
+  .entry {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2xs);
+    a {
+      display: inline-flex;
+      margin-top: auto;
+    }
+  }
   li {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    box-shadow: 1px 1px 3px rgba(0,0,0,.3);
     &:not(:last-of-type) {
       margin-bottom: var(--spacing-lg);
     }
