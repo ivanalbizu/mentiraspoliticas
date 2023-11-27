@@ -14,16 +14,22 @@ const { tags } = Astro.props;
 
 <style lang="scss">
   ul {
+    --padding-x: var(--spacing-xs);
+    --padding-y: var(--spacing-sm);
     display: flex;
     gap: var(--spacing-2xs);
     flex-wrap: wrap;
     margin-bottom: var(--spacing-xs);
     a {
+      display: inline-block;
       font-size: 14px;
-      padding: var(--spacing-2xs) var(--spacing-xs);
+      padding: var(--padding-y) var(--padding-x);
       background-color: var(--accent-dark);
       border-radius: 2px;
       color: #fff;
+    }
+    @media (min-width: 576px) {
+      --padding-y: var(--spacing-2xs);
     }
   }
 </style>
