@@ -1,10 +1,12 @@
-import { slug as slugger } from "github-slugger";
+import slug from "slugify";
 import type { CollectionEntry } from "astro:content";
 
-export const slugifyStr = (str: string) => slugger(str);
+export const slugifyStr = (str: string) => slug(str, {
+  lower: true
+});
 
 const slugify = (post: CollectionEntry<"mentira">["data"]) =>
-  post.postSlug ? slugger(post.postSlug) : slugger(post.title);
+  post.postSlug ? slug(post.postSlug) : slug(post.title);
 
 export const slugifyAll = (arr: string[]) => arr.map(str => slugifyStr(str));
 
