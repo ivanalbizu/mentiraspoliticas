@@ -16,18 +16,18 @@ tags:
 ---
 
 import VideoBlocks from '@components/VideoBlocks.astro';
+import Media from '@components/Media.astro';
 import Timeline from '@components/Timeline.astro';
 import TimelineItem from '@components/TimelineItem.astro';
-import { YouTube } from '@astro-community/astro-embed-youtube';
 
 
 <VideoBlocks>
 	<div slot="before">
-		<YouTube id="_ffEffzkGtc" title="El PSN no pactará con Bildu" />
+		<Media id="_ffEffzkGtc" title="El PSN no pactará con Bildu" />
 		<h3>El <abbr title="Partido Socialista Navarro">PSN</abbr> no pactará con Bildu</h3>
 	</div>
 	<div slot="after">
-		<YouTube id="jM9IivS7-0s" title="BILDU garantiza su SÍ a Pedro Sánchez" />
+		<Media id="jM9IivS7-0s" title="BILDU garantiza su SÍ a Pedro Sánchez" />
 		<h3>BILDU garantiza su SÍ a Pedro Sánchez</h3>
 	</div>
 </VideoBlocks>
@@ -48,6 +48,6 @@ import { YouTube } from '@astro-community/astro-embed-youtube';
   </TimelineItem>
   <TimelineItem title="Pedro Sánchez" date="4 noviembre 2019">
 		<p>En el debate a cinco del 4 de noviembre 2019 Pedro Sánchez afirmó: <strong>Sánchez insiste en que no pacta con los independentista y le acusan de mentir</strong></p>
-		<YouTube id="EtL4JANJWnw" title="Sánchez insiste en que no pacta con los independentista y le acusan de mentir" />
+		<Media id="EtL4JANJWnw" title="Sánchez insiste en que no pacta con los independentista y le acusan de mentir" />
   </TimelineItem>
 </Timeline>

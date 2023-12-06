@@ -20,17 +20,17 @@ tags:
 ---
 
 import VideoBlocks from '@components/VideoBlocks.astro';
-import { YouTube } from '@astro-community/astro-embed-youtube';
+import Media from '@components/Media.astro';
 import Timeline from '@components/Timeline.astro';
 import TimelineItem from '@components/TimelineItem.astro';
 
 <VideoBlocks>
 	<div slot="before">
-    <YouTube id="-X-pF5R8m-U" title="Pedro Sánchez no dará la aministía a los políticos ni a independentistas Catalanes" />
+    <Media id="-X-pF5R8m-U" title="Pedro Sánchez no dará la aministía a los políticos ni a independentistas Catalanes" />
     <h3>Pedro Sánchez no dará la aministía a los políticos ni a independentistas Catalanes</h3>
 	</div>
 	<div slot="after">
-    <YouTube id="5aQzEOxvFqI" title="Pedro Sánchez va conceder una amnistía a las personas encauzadas por el procés" />
+    <Media id="5aQzEOxvFqI" title="Pedro Sánchez va conceder una amnistía a las personas encauzadas por el procés" />
     <h3>Pedro Sánchez va conceder una amnistía a las personas encauzadas por el procés</h3>
 	</div>
 </VideoBlocks>
