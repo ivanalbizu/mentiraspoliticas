@@ -13,7 +13,7 @@ const mentira = mentiras.find(
   (el) => el.data.featured
 ) as any;
 
-const tags = [...new Set(mentiras.map((post) => post.data.tags).flat())];
+const tags = [...new Set(mentiras.map((mentira) => mentira.data.tags).flat())];
 ---
 
 <!doctype html>
