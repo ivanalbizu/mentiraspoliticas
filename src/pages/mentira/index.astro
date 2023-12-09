@@ -1,11 +1,9 @@
 ---
-import BaseHead from '@components/BaseHead.astro';
-import Header from '@components/Header.astro';
-import Footer from '@components/Footer.astro';
+import Default from "@layouts/Default.astro";
 import FormattedDate from '@components/FormattedDate.astro';
 import Tags from '@components/Tags.astro';
 import Media from '@components/Media.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { SITE_TITLE } from '../../consts';
 import { getCollection } from 'astro:content';
 
 const mentiras = (await getCollection('mentira')).sort(
@@ -13,35 +11,25 @@ const mentiras = (await getCollection('mentira')).sort(
 );
 ---
 
-<!doctype html>
-<html lang="es">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header />
-    <main>
-      <section>
-        <ul>
-          {
-            mentiras.map((mentira) => (
-              <li class="mentira">
-                <div class="entry">
-                  <h2>{mentira.data.title}</h2>
-                  <FormattedDate date={mentira.data.lieDate} />
-                  <Tags tags={mentira.data.tags} />
-                  <a href={`/mentira/${mentira.slug}/`}>Ver la mentira <span class="sr-only">{mentira.data.title}</span></a>
-                </div>
-                <Media id={`${mentira.data.youtubeId}`} title={`${mentira.data.youtubeTitle}`} />
-              </li>
-            ))
-          }
-        </ul>
-      </section>
-    </main>
-    <Footer />
-  </body>
-</html>
+<Default title={SITE_TITLE}>
+  <section>
+    <ul>
+      {
+        mentiras.map((mentira) => (
+          <li class="mentira">
+            <div class="entry">
+              <h2>{mentira.data.title}</h2>
+              <FormattedDate date={mentira.data.lieDate} />
+              <Tags tags={mentira.data.tags} />
+              <a href={`/mentira/${mentira.slug}/`}>Ver la mentira <span class="sr-only">{mentira.data.title}</span></a>
+            </div>
+            <Media id={`${mentira.data.youtubeId}`} title={`${mentira.data.youtubeTitle}`} />
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Default>
 
 <style lang="scss">
   .entry {

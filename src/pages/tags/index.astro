@@ -10,11 +10,13 @@ let tags = getUniqueTags(posts);
 ---
 
 <Default title={`Tags | ${SITE_TITLE}`}>
-  <ul>
-    {tags.map(tag => 
-      <li>
-        <a href={`/tags/${tag}/`}>{tag}</a>
-      </li>
-    )}
-  </ul>
+  <section>
+    <ul>
+      {tags.map(tag => 
+        <li>
+          <a href={`/tags/${tag}/`}>{tag}</a>
+        </li>
+      )}
+    </ul>
+  </section>
 </Default>
